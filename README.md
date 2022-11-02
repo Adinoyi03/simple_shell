@@ -1,8 +1,8 @@
 ### SIMPLE UNIX SHELL 🐚
-##Description 📃
+## Description 📃
 This is a simple implementation of a UNIX command line interpreter. The shell can interpret and execute command line arguments read from the standard input. the shell read lines from a file or terminal line which is then interpreted and executed if the command is valid
 
-#Requirements
+# Requirements
 All the files are to be compiled on an Ubuntu 14.04 LTS machine with: gcc -Wall -Werror -Wextra -pedantic *.c
 All files ends end with a new line, with no memory leaks
 All code will use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
@@ -11,11 +11,11 @@ The simple shell supports most shell commands, such as cat, pwd, ls -la and more
 Return Value :
 The shell returns a value of 0 if the command is valid and the command is executed successfully.
 
-#Output 📁
+# Output 📁
 The program must have the exact same output as sh (/bin/sh) as well as the exact same error output.
 The only difference is when you print an error, the name of the program must be equivalent to the argv[0]
 Usage
-#list of fucntions and system calls used
+# List of fucntions and system calls used
 - access (man 2 access)
 - chdir (man 2 chdir)
 - close (man 2 close)
@@ -47,10 +47,10 @@ Usage
 - wait4 (man 2 wait4)
 - write (man 2 write)
 
-#Compilation
+# Compilation
 The shell will be compiled this way: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
-#Testing
+# Testing
 The shell works like this in interactive mode:
 
 $ ./hsh
@@ -73,11 +73,11 @@ $ cat test_ls_2 | ./hsh
  hsh main.c shell.c test_ls_2
  hsh main.c shell.c test_ls_2
 $
-##Mandatory Tasks
-#0. Betty would be proud
+## Mandatory Tasks
+# 0. Betty would be proud
 Write a beautiful code that passes the Betty checks
 
-#1. Simple shell 0.1
+# 1. Simple shell 0.1
 Write a UNIX command line interpreter.
 
 Usage: simple_shell Your Shell should:
@@ -86,17 +86,17 @@ Display a prompt and wait for the user to type a command. A command line always 
 
 use the PATH implement built-ins handle special characters : ", ', `, \, *, &, # be able to move the cursor handle commands with arguments execve will be the core part of your Shell, don’t forget to pass the environ to it…
 
-#3. Simple shell 0.3
+# 3. Simple shell 0.3
 Simple shell 0.2 +
 
 Handle the PATH fork must not be called if the command doesn’t exist
 
-#4. Simple shell 0.4
+# 4. Simple shell 0.4
 Simple shell 0.3 +
 
 Implement the exit built-in, that exits the shell Usage: exit You don’t have to handle any argument to the built-in exit
 
-#5. Simple shell 1.0
+# 5. Simple shell 1.0
 Simple shell 0.4 +
 
 Implement the env built-in, that prints the current environment
@@ -104,7 +104,7 @@ Implement the env built-in, that prints the current environment
 end of mandatory
 
 Advanced Tasks
-#6. Simple shell 0.1.1
+# 6. Simple shell 0.1.1
 Simple shell 0.1 +
 
 Write your own getline function
@@ -114,11 +114,11 @@ You are not allowed to use getline
 You don't have to:
 
 be able to move the cursor
-#7. Simple shell 0.2.1
+# 7. Simple shell 0.2.1
 Simple shell 0.2 +
 
 You are not allowed to use strtok
-#8. Simple shell 0.4.1
+# 8. Simple shell 0.4.1
 Simple shell 0.4 +
 
 handles arguments for a built-in exit
@@ -129,7 +129,7 @@ julien@ubuntu:~/shell$ echo $?
 98
 julien@ubuntu:~/shell$
 
-#9. setenv, unsetenv
+# 9. setenv, unsetenv
 Simple shell 1.0 +
 
 Implement the setenv and unsetenv builtin commands
@@ -142,7 +142,7 @@ unsetenv
 Remove an environment variable
 Command syntax: unsetenv VARIABLE
 Should print something on stderr on failure
-#10. cd
+# 10. cd
 Simple sell 1.0 +
 
 Implement the builtin command cd:
@@ -154,7 +154,7 @@ You have to handle the command cd -
 You have to update the environment variable PWD when you change directory
 man chdir, man getcwd
 
-#11. ;
+# 11. ;
 Simple shell 1.0 +
 
 Handle the commands separator ;
@@ -173,7 +173,7 @@ ls: cannot access /hbtn: No such file or directory
 backups  cache  crash  lib  local  lock  log  mail  metrics  opt  run  spool  tmp
 backups  cache  crash  lib  local  lock  log  mail  metrics  opt  run  spool  tmp
 alex@~$
-#12. && and ||
+# 12. && and ||
 Simple shell 1.0 +
 
 Handle the && and || shell logical operators
@@ -209,7 +209,7 @@ ls: cannot access /hbtn: No such file or directory
 ls: cannot access /hbtn: No such file or directory
 backups  cache  crash  lib  local  lock  log  mail  metrics  opt  run  spool  tmp
 alex@~$
-#13. alias
+# 13. alias
 Simple shell 1.0 +
 
 Implement the alias builtin command
@@ -217,7 +217,7 @@ Usage: alias [name[='value'] ...]
 alias: Prints a list of all aliases, one per line, in the form name='value'
 alias name [name2 ...]: Prints the aliases name, name2, etc 1 per line, in the form name='value'
 alias name='value' [...]: Defines an alias for each name whose value is given. If name is already an alias, replaces its value with value
-#14. Variables
+# 14. Variables
 Simple shell 1.0 +
 
 Handle variables replacement
@@ -234,7 +234,7 @@ $ echo $PATH
 /home/julien/bin:/home/julien/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 $ exit 
 julien@ubuntu:~/shell$ 
-#15. Comments
+# 15. Comments
 Simple shell 1.0 +
 
 Handle comments (#)
@@ -244,15 +244,16 @@ $ echo $$ # ls -la
 5114
 $ exit
 julien@ubuntu:~/shell$ 
-16. File as input
+# 16. File as input
 Simple shell 1.0 +
 
-##Usage: simple_shell [filename]
+## Usage: simple_shell [filename]
 Your shell can take a file as a command line argument
 The file contains all the commands that your shell should run before exiting
 The file should contain one command per line
 In this mode, the shell should not print a prompt and should not read from stdin
-#Contributors 👫
+# Contributors 👫
+
 Kevin Odo
 
 Abdulrahaman Abdulrahaman
